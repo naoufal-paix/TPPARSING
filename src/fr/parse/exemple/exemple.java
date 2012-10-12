@@ -11,7 +11,7 @@ public class exemple {
 	
 	public static void main(String args[]) throws FileNotFoundException
 	{
-		String fichier = "/home/back/Desktop/monfichier.txt";
+		String fichier = "read.txt";
 		File file = new File(fichier);
 		CountHandler handler = new CountHandler();
 		FileParser f = new FileParser();
