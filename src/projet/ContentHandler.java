@@ -20,5 +20,6 @@ public interface ContentHandler {
 	 *  \param ligne la ligne du fichier a afficher
 	 */
 	public int defaultLine(String ligne);
+	public int commentligne(String comment);
 
 }

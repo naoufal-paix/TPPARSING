@@ -26,7 +26,7 @@ public class exemple {
 	 */	
 	public static void main(String args[]) throws FileNotFoundException
 	{
-		String fichier = "noufal.txt";
+		String fichier = "/home/filieres/mas2info/farahnou/fichier.txt";
 		File file = new File(fichier);
 		CountHandler handler = new CountHandler();
 		FileParser f = new FileParser();

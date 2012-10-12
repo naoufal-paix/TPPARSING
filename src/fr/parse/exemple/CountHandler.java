@@ -27,8 +27,8 @@ import projet.ContentHandler;
 public class CountHandler implements ContentHandler {
 
 	/*! attribut qui contient le nombre de lignes dans les fichier !*/
-	int compteur=0;
-	
+	int compteurligne=0;
+	int compteurcomment=0;
 	/*!
 	 * \brief methode qui affiche le contenu du fichier ligne par ligne
 	 * \param content chaine de caractere contenant la ligne a afficher
@@ -37,8 +37,17 @@ public class CountHandler implements ContentHandler {
 	@Override
 	public int defaultLine(String content) {
 		System.out.println(content);
-		compteur++;
-		return compteur;
+		compteurligne++;
+		return compteurligne;
+	}
+
+	@Override
+	public int commentligne(String comment) {
+		System.out.println(comment);
+		compteurcomment++;
+		return compteurcomment;
+		
+		
 	}
 
 }

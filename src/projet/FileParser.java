@@ -32,17 +32,22 @@ public class FileParser {
 	  */
 	public void parse(File f,ContentHandler handler) throws FileNotFoundException
 	{
-		int temp=0;
+		int templigne=0;
+		int tempcomment=0;
 		Scanner scanner = new Scanner(new FileReader(f));
 	    try {
 	      
 	      while (  scanner.hasNextLine() ){
-	    	  temp = handler.defaultLine(scanner.nextLine());
+	    	  String ff = scanner.nextLine();
+	    	  if(ff.startsWith("#"))
+	    		  tempcomment = handler.defaultLine(ff);
+	    	  else  
+	    		  templigne = handler.commentligne(ff);
 	      }
 	    }
 	    finally {
 	      scanner.close();
-	      System.out.println("le fichier comporte "+temp+" lignes.");
+	      System.out.println("le fichier comporte "+templigne+" lignes dont "+tempcomment+" sont des commentaires.");
 	    
 	  }
 	}
